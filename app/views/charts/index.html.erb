@@ -1,0 +1,7 @@
+<h1>Billboard</h1>
+
+<% @charts.each do |chart| %>
+  <div class="chart-row">
+    <%= link_to chart.text, chart_show_path(chart.values.last.gsub("/charts/", ""))%>
+  </div>
+<% end %>
