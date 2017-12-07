@@ -1,4 +1,5 @@
 class SongsController < ApplicationController
+
   def index
     chart_name = params[:chart_name]
 

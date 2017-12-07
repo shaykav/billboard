@@ -8,7 +8,7 @@ class Song < ApplicationRecord
     html = response.body
     dom = Nokogiri::HTML(html)
 
-    dom.css("h2.chart-row__song")
+    dom.css("div.chart-row__title")
   end
 
 
