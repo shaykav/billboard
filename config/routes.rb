@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'songs/index'
+  root 'charts#index'
 
   get 'charts/index'
+
+  get 'songs/index'
 
   get 'charts/:chart_name', to: 'charts#show', as: :chart_show
 
@@ -13,5 +15,4 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

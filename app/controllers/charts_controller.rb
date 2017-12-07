@@ -10,7 +10,10 @@ class ChartsController < ApplicationController
 
   def show
     chart_name = params[:chart_name]
+    @chart_name = params[:chart_name].gsub("-", " ").humanize.upcase rescue ' '
 
     @songs = Song.fetch(chart_name.parameterize)
+
+    @charts = Chart.fetch
   end
 end
