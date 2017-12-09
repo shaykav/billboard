@@ -1,4 +1,5 @@
 class Song < ApplicationRecord
+  belongs_to :user
 
   def self.fetch(chart_name)
 
@@ -10,6 +11,5 @@ class Song < ApplicationRecord
 
     dom.css("div.chart-row__title")
   end
-
 
 end
