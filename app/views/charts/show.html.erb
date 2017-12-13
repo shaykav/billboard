@@ -1,7 +1,13 @@
+<p id="notice"><%= notice %></p>
 <h1><%= @chart_name %></h1>
-
 <ol>
-<% @songs.each do |song| %>
-  <li><%= song.text %></li>
+<%= form_for(@song) do %>
+  <% @songs.each do |song| %>
+    <li><%= song.text %></li>
+
+      <%= check_box_tag 'songs[]', song.text -%>
+    <% end %>
+  </ol>
+
+  <%= submit_tag "Save favorites" %>
 <% end %>
-</ol>
