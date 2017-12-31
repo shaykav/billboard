@@ -1,0 +1,12 @@
+<div class="new-body">
+
+  <h1 class="text-center">Favorites</h1>
+
+  <% @song.each do |song| %>
+    <ul>
+      <li><%= song.name %></li>
+    </ul>
+  <% end %>
+
+  <%= link_to 'Back', root_path %>
+</div>

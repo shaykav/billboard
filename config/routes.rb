@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get 'songs/index'
 
+  get '/favorites', to: 'songs#favorites', as: 'favorites'
+
   get 'charts/:chart_name', to: 'charts#show', as: :chart_show
 
   get '/login' => 'sessions#new'

@@ -1,13 +1,19 @@
-<p id="notice"><%= notice %></p>
-<h1><%= @chart_name %></h1>
-<ol>
-<%= form_for(@song) do %>
-  <% @songs.each do |song| %>
-    <li><%= song.text %></li>
+<div class="new-body">
 
-      <%= check_box_tag 'songs[]', song.text -%>
-    <% end %>
-  </ol>
+  <p id="notice"><%= notice %></p>
+  <h1 class="text-center"><%= @chart_name %></h1>
+  <ol>
+  <%= form_for(@song) do %>
+    <% @songs.each do |song| %>
+      <li><%= song.text %></li>
 
-  <%= submit_tag "Save favorites" %>
-<% end %>
+        <%= check_box_tag 'songs[]', song.text -%>
+      <% end %>
+    </ol>
+
+    <%= submit_tag "Save favorites", class: 'btn btn-primary btn-rounded' %>
+  <% end %>
+  <br>
+  <br>
+  <%= link_to 'Back', root_path %>
+</div>

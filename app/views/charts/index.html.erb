@@ -1,7 +1,17 @@
-<h1>Billboard Charts</h1>
+<div class="new-body">
 
-<% @charts.each do |chart| %>
-  <div class="chart-row">
-    <%= link_to chart.text, chart_show_path(chart.values.last.gsub("/charts/", ""))%>
+  <h1 class="text-center">Billboard Charts</h1>
+
+  <div class="fav-link text-center">
+    <%= link_to favorites_path, class: 'btn btn-warning btn-rounded' do %>
+      <i class="fa fa-star"> Favorites</i>
+    <% end %>
   </div>
-<% end %>
+
+
+  <% @charts.each do |chart| %>
+    <div class="chart-row">
+      <%= link_to chart.text, chart_show_path(chart.values.last.gsub("/charts/", ""))%>
+    </div>
+  <% end %>
+</div>
